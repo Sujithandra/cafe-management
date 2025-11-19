@@ -1,50 +1,62 @@
-menu={'veg':
-{
-    'pasta':40,
-    'pizza':50,
-    'veg-burger':40,
-    'salad':70,
-    'coffee':30'
-}
-    'Non-veg':
-    {
-        'chicken-burger':100,
-        'chicken-pizza':100,
+menu = {
+    'veg': {
+        'pasta': 40,
+        'pizza': 50,
+        'veg-burger': 40,
+        'salad': 70,
+        'coffee': 30
+    },
+    'non-veg': {
+        'chicken-burger': 100,
+        'chicken-pizza': 100
     }
 }
-print("welcome to our restaurant:")
-Item=input("enter veg for vegItem \n enter Non-veg  for non-veg enter None for no order")
-if Item="veg":
-    println("""
-veg:
-    pasta:40
-    pizza:50,
-    veg-burger:40,
-    salad:70,
-    coffee:30,
-    """)
-    
-elif item="non-veg":
+
+print("Welcome to our restaurant!")
+
+Item = input("Enter 'veg' for veg items\nEnter 'non-veg' for non-veg items\nEnter 'none' for no order\nYour choice: ").lower()
+
+if Item == "veg":
     print("""
-    Non-veg:
-        chicken-burger:100,
-        chicken-pizza:100,
-        """)
-else :
-    ("No order")
-order_items=0
-item_1=input("enter the name of the item you want to order:")
-if item_1 in menu["Item"]:
-    order_item+=(menu["Item"]["item_1"])
-    print("your item {item-1} has been added to your order")
+Veg Menu:
+    pasta : 40
+    pizza : 50
+    veg-burger : 40
+    salad : 70
+    coffee : 30
+    """)
+
+elif Item == "non-veg":
+    print("""
+Non-Veg Menu:
+    chicken-burger : 100
+    chicken-pizza  : 100
+    """)
+
 else:
-    print("order item {item-1} is not available")
-another_order=input("Do you want to order another item? (yes/no)")
-if another_order=="yes":
-    item_2=input("enter the name of second item=")
-    if item_2 in menu:
-        order_items+=(menu["item"]["item-2"])
+    print("No order")
+    exit()
+
+order_items = 0
+
+item_1 = input("Enter the name of the item you want to order: ").lower()
+
+if item_1 in menu[Item]:
+    order_items += menu[Item][item_1]
+    print(f"Your item '{item_1}' has been added to your order.")
+else:
+    print(f"Item '{item_1}' is not available.")
+
+another_order = input("Do you want to order another item? (yes/no): ").lower()
+
+if another_order == "yes":
+    item_2 = input("Enter the name of the second item: ").lower()
+    if item_2 in menu[Item]:
+        order_items += menu[Item][item_2]
+        print(f"Your item '{item_2}' has been added.")
     else:
-        print("order item {item-2}not available")
-print("The total amount of items is {order_items}")
+        print(f"Item '{item_2}' is not available.")
+
+print(f"The total bill amount is: Rs.{order_items}")
+
 
