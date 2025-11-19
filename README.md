@@ -46,7 +46,7 @@ This project helps beginners understand how to:
 1. When done → displays the total bill
 
 -----
-##💡 Future Enhancements
+## 💡 Future Enhancements
 - GUI interface using Tkinter
 - Add quantity for each order
 - Add GST & discount system
